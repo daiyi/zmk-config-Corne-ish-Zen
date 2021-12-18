@@ -1,6 +1,7 @@
 /*
 *
 * Copyright (c) 2021 Darryl deHaan
+*               2021 daiyi
 * SPDX-License-Identifier: MIT
 *
 */
@@ -80,18 +81,18 @@
                 util_layer {
                         label = "3 UTIL";
 //                                    -------------------------------------     --------------------------------------
-//                                   | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |        |
-//                                   |  TAB  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |        |
-//                                   | SHFT  |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" | RESET* | *DO NOT REMOVE. left side crashes without `&RESET`
+//                                   | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |        |
+//                                   |       |     |     |     |     |     |   |     |     | pg↑ |     |     |        |
+//                                   |       |     |  ↦  |  «  |  »  |     |   |     | top | pg↓ | end |     | RESET* | *DO NOT REMOVE. left side crashes without `&RESET`
 //                                     ------------------|  ▽  |  ▽  |  ▽  |   |  ▽ |  ▽  |  ▽  |--------------------
 //                                                        -----------------     -----------------
                         bindings = <
 //|----------+--------+----------+----------+----------+----------|                    |-----------+---------+---------+---------+---------+---------|
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans  &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &none      &none     &none      &none      &none    &none
 //|----------|--------|----------|----------|----------|----------|                    |-----------|---------|---------|---------|---------|---------|
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                             &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &none
+    &none      &none     &none      &none      &none      &none                           &none      &none    &kp PG_UP   &none      &none    &none
 //|----------|--------|----------|----------|----------|----------|                    |-----------|---------|---------|---------|---------|---------|
-   &kp LSHFT &trans   &trans &trans   &trans   &trans                                &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &reset
+    &none      &none   &kp C_PP  &kp C_PREV  &kp C_NEXT   &none                           &none     &kp HOME  &kp PG_DN  &kp END     &none    &reset
 //+----------+--------+----------+----------+----------|----------|---------| |--------|-----------|---------+---------+---------+---------+---------+
                                                &trans     &trans    &trans      &trans   &trans      &trans
 //                                          `----------+----------+---------' `--------+-----------+---------'

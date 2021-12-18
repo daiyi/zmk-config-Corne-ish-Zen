@@ -14,7 +14,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        label = "ABC";
+                        label = "";
 // -----------------------------------------------------------------------------------------
 // | `~   |  Q  |  W  |  E   |  R  |  T  |   |  Y     |  U   |  I  |  O  |  P  | ESC    |
 // |  TAB |  A  |  S  |  D   |  F  |  G  |   |  H     |  J   |  K  |  L  |  ;  |  '     |
@@ -30,11 +30,11 @@
                 };
                 
                 lower_layer {
-                        label = "L1 NUM";
+                        label = "1 NUM";
 // -----------------------------------------------------------------------------------------
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |       |
+// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP  |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     | RESET | <- DO NOT REMOVE. left side crashes without this.
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans  &trans
@@ -45,7 +45,7 @@
                 };
 
                 raise_layer {
-                        label = "L2 SYM";
+                        label = "2 SYM";
 // -----------------------------------------------------------------------------------------
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |

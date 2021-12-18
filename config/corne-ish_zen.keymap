@@ -39,9 +39,9 @@
 
                         bindings = <
 //|----------+--------+----------+----------+----------+----------|                    |-----------+---------+---------+---------+---------+---------|
-   &kp GRAVE   &kp LT   &kp LBKT   &kp LPAR   &kp LBRC   &none                            &none     &kp RBRC  &kp RPAR  &kp RBKT   &kp GT   &kp ESC 
+   &kp GRAVE   &kp LT   &kp LBKT   &kp LPAR   &kp LBRC    &none                            &none    &kp RBRC  &kp RPAR  &kp RBKT   &kp GT   &kp ESC 
 //|----------|--------|----------|----------|----------|----------|                    |-----------|---------|---------|---------|---------|---------|
-    &kp TAB    &kp N1   &kp N2      &kp N3     &kp N4     &kp N5                          &kp N6     &kp N7    &kp N8    &kp N9    &kp N0   &kp SPACE
+    &kp N0     &kp N1    &kp N2     &kp N3     &kp N4     &kp N5                          &kp N6     &kp N7    &kp N8    &kp N9   &kp COLON &kp SPACE
 //|----------|--------|----------|----------|----------|----------|                    |-----------|---------|---------|---------|---------|---------|
    &kp LSHFT    &none    &none      &none     &kp MINUS  &kp PLUS                        &kp EQUAL  &kp BSLH  &kp PIPE  &kp DOT   &kp UNDER  &none
 //+----------+--------+----------+----------+----------|----------|---------| |--------|-----------|---------+---------+---------+---------+---------+
@@ -52,16 +52,22 @@
 
                 raise_layer {
                         label = "2 SYM";
-// -----------------------------------------------------------------------------------------
-// | CTRL |  <  |  [  |  (  |  {  |     |   |     |  }  |  )  |  ]  |  >  | esc |
-// |  0   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  :  | spc |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                                  //  ------------------------------------     -----------------------------------
+                                  // | `~   |  <  |  [  |  (  |  {  |     |   |     |  }  |  )  |  ]  |  >  | esc |
+                                  // | tab  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  ↑  |  *  |  ▲  | bck |
+                                  // | SHFT |     |     |     |  -  |  +  |   |  =  |  ←  |  ↓  |  →  |  _  |     |
+                                  //                    |  ▲  |  ▲  |  ▲  |   |  ▲  |  ▲  |  ▲  |
+
                         bindings = <
-   &kp LCTRL &trans   &trans &trans   &trans   &trans          &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT       &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LSHFT &trans   &trans &trans   &trans   &trans          &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE       &kp RET   &trans    &kp RALT
+//|----------+--------+----------+----------+----------+----------|                    |-----------+---------+---------+---------+---------+---------|
+   &kp GRAVE   &kp LT   &kp LBKT   &kp LPAR   &kp LBRC   &none                            &none     &kp RBRC  &kp RPAR  &kp RBKT   &kp GT   &kp ESC 
+//|----------|--------|----------|----------|----------|----------|                    |-----------|---------|---------|---------|---------|---------|
+    &kp TAB   &kp EXCL   &kp AT    &kp HASH   &kp DLLR   &kp PRCNT                      &kp CARET   &kp AMPS   &kp N8    &kp STAR   &trans   &kp BSPC
+//|----------|--------|----------|----------|----------|----------|                    |-----------|---------|---------|---------|---------|---------|
+   &kp LSHFT    &none    &none      &none     &kp MINUS  &kp PLUS                        &kp EQUAL  &kp BSLH  &kp PIPE  &kp DOT   &kp UNDER  &none
+//+----------+--------+----------+----------+----------|----------|---------| |--------|-----------|---------+---------+---------+---------+---------+
+                          	               &trans     &trans    &trans      &trans   &trans      &trans
+//                                          `----------+----------+---------' `--------+-----------+---------'
                         >;
                 };
                 
